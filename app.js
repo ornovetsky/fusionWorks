@@ -1,26 +1,57 @@
-const arr = Array.from({ length: 1000 }, () =>
-  Math.floor(Math.random() * 900 + 1)
-);
 
-let unique = arr.filter((item, i, ar) => ar.indexOf(item) === i);
-const unique1 = [...new Set(arr)]
+const btnOne = document.getElementById('btn-1')
+const btnTwo = document.getElementById('btn-2')
+const btnThree = document.getElementById('btn-3')
+const solOne = document.getElementById('sol-1')
+const solTwo = document.getElementById('sol-2')
+const solThree = document.getElementById('sol-3')
 
-const arrTruthy = [1,0,10, '0', '1', '',NaN, false, null, undefined, 'false', 'true']
-const arr1000 = Array.from({length:1000}, () => arrTruthy[Math.floor(Math.random()*arrTruthy.length+1)])
 
-let truthy = arr1000.map( (el, i) => {
-  if (!!el) {
-  return el
+let isClickedOne = false
+let isClickedTwo = false
+let isClickedThree = false
+window.addEventListener('click', (e) => { 
+  if(e.target.id === 'btn-1'){
+
+    if(!isClickedOne) {
+      solOne.classList.remove('displaynone')
+      solOne.classList.add('visible')
+      btnOne.innerHTML = 'Hide solution'
+      isClickedOne = true
+      } else {
+        solOne.classList.add('displaynone')
+        solOne.classList.remove('visible')
+        btnOne.innerHTML = 'See solution'
+        isClickedOne = false
+      }
   }
-})
-
-// for(let i=0;i<5;i++){
-//   setTimeout(() => {
-//     console.log(i)
-//   }, (1*1000));
-// }
-// for(var i=0;i<5;i++){
-//   (function(i){setTimeout(() => {
-//     console.log(i)
-//   }, (1*1000))})(i)
-// }
+    if(e.target.id==='btn-2'){
+      if(!isClickedTwo){
+        solTwo.classList.remove('displaynone')
+        solTwo.classList.add('visible')
+        btnTwo.innerHTML = 'Hide solution'
+        isClickedTwo = true
+        } else {
+          solTwo.classList.add('displaynone')
+          solTwo.classList.remove('visible')
+          btnTwo.innerHTML = 'See solution'
+          isClickedTwo = false
+        }
+      }
+  
+    if(e.target.id==='btn-3'){
+      if(!isClickedThree){
+        solThree.classList.remove('displaynone')
+        solThree.classList.add('visible')
+        btnThree.innerHTML = 'Hide solution'
+        isClickedThree = true
+        } else {
+          solThree.classList.add('displaynone')
+          solThree.classList.remove('visible')
+          btnThree.innerHTML = 'See solution'
+          isClickedThree = false
+        }
+      }
+  
+}
+)

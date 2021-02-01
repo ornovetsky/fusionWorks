@@ -17,7 +17,7 @@
       <img src="./img/avatar1.jpg">
       <div class="container-contents">
         <p>John Vue</p>
-        <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+        <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         <button class="btn btn-primary">Do it</button>
       </div>
     </div>
@@ -25,7 +25,7 @@
       <img src="./img/avatar1.jpg">
       <div class="container-contents">
         <p>Sergio Reactti</p>
-        <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+        <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         <button class="btn btn-primary">Do it</button>
       </div>
     </div>
@@ -33,14 +33,64 @@
       <img src="./img/avatar1.jpg">
       <div class="container-contents">
         <p>Valentino Angularri</p>
-        <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+        <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         <button class="btn btn-primary">Do it</button>
       </div>
     </div>
   </div>
+  <div class="container-solutions">
+      <div class="case" id="case-1">
+        <p>1. Fix the code so as to see 0 1 2 3 4 in the results</p>
+        <p class="text">for (var i=0; i < 5; i++){ <br>
+          setTimeout(function() {console.log(i)}, i*1000)<br>
+        }</p>
+          <div class="displaynone" id="sol-1">
+            <span>
+              for (let i = 0; i < 5; i++){
+                setTimeout( () => {
+                  console.log(i)
+                }, (1*1000));
+              }
+              for (var i = 0; i < 5; i++){
+                (function(i) {setTimeout( () => {
+                  console.log(i)
+                }, (1*1000))})(i)
+              }
+          </span>
+        </div>
+      </div>
+      <button class="btn btn-primary" id="btn-1">See solution</button>
+      <div class="case" id="case-2">
+          <p>2. Having the code listed below, Find out how many unique values were generated.</p>
+          <p class="text">// Array of 1000 numbers which may repeat <br>
+          const arr = Array.from({length:1000}, () => Math.round(Math.random()*900+1))
+        </p>
+        <div class="displaynone" id="sol-2">
+          <span>
+            let unique = arr.filter((item, i, ar) => ar.indexOf(item) === i);
+            const unique1 = [...new Set(arr)]
+        </span>
+      </div>
+      </div>
+      <button class="btn btn-primary" id="btn-2">See solution</button>
+      <div class="case" id="case-3">
+          <p>3. Having the code listed below, write down code that will output only truthy values.</p>
+          <p class="text">// Array of 1000 numbers which may repeat <br>
+            const arr = [1,0,10, '0', '1', '',NaN, false, null, undefined, 'false', 'true']
+        </p>
+        <div class="displaynone" id="sol-3">
+          <span>
+            let truthy = arr1000.map( (el, i) => {
+                if (!!el) {
+                return el
+                }
+              }
+            )
+        </span>
+      </div>
+      </div>
+      <button class="btn btn-primary" id="btn-3">See solution</button>
+  </div>
 <script src="app.js"></script>
-</body>
-</html>
-  <script src="app.js"></script>
 </body>
 </html>
