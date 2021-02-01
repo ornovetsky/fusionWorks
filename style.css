@@ -12,7 +12,7 @@ body {
   margin: 2% 2%;
   display: flex;
   align-items: flex-start;
-  /* justify-items:center;  */
+  justify-items:center; 
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -98,4 +98,20 @@ span {
 footer {
   margin: 20px auto;
   text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .container-solutions {
+    width: 90%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .container-team {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .container-person {
+    width: 90%;
+
+  }
 }
