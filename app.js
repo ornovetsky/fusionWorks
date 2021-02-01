@@ -53,5 +53,42 @@ window.addEventListener('click', (e) => {
         }
       }
   
-}
+  }
 )
+
+function profile(i){
+let index = i
+const profile = document.getElementById(`person-${i}`)
+profile.addEventListener('click', (e) => {
+  if(index===1){
+  profile.innerHTML = `
+  <img src="./img/avatar2.jpg">
+  <div class="container-contents">
+    <p>Andrei Ornovetchii</p>
+    <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <button class="btn btn-primary" onclick="profile(1)">Press me</button>
+  </div>`}
+    if(index === 2) {
+      profile.innerHTML = `
+      <img src="./img/avatar2.jpg">
+      <div class="container-contents">
+        <p>Andrei Ornovetchii</p>
+        <a href="tel:+">37368070776</a> <br>
+        <a href="mailto:ornovetsky@gmail.com">ornovetsky@gmail.com</a><br>
+        <a href="https://github.com/ornovetsky">https://github.com/ornovetsky</a> <br>
+        <a href="http://ornovetchii.com">http://ornovetchii.com</a> <br>
+        <p class="text">tempor incididunt ut  </p>
+        <button class="btn btn-primary" onclick="profile(1)">Press me</button>
+      </div>`
+    }
+    if(index === 3) {
+  profile.innerHTML = `
+  <img src="./img/avatar2.jpg">
+  <div class="container-contents">
+    <p>Andrei Ornovetchii</p>
+    <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <button class="btn btn-primary" onclick="profile(1)">Press me</button>
+  </div>`
+    }
+  })
+}
